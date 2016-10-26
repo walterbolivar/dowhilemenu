@@ -1,0 +1,88 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "stdlib.h"
+
+using namespace std;
+
+float fsuma(float a ,float b);//prototipo de funcion
+float fresta(float a,float b);
+float fproducto (float a,float b);
+float fdivision (float a,float b);
+void main ()
+{
+   float a, b,suma,resta,producto,division,r;//validacion de entrada 
+   int opcion;
+   do{
+	   cout<<"ingrese a: ";
+	   cin>>a;
+	
+   }while(a<=0);
+   
+   do{
+	   cout<<"ingrese b: ";
+	   cin>>b;
+   }while(b<=0);
+   
+   do {
+	 cout<<"      MENU";
+     cout << endl;
+     cout << "1.- Suma" << endl;
+     cout << "2.- Resta" << endl;
+     cout << "3.- Producto" << endl;
+     cout << "4.- División" << endl;
+	 cout << "0.- Salir" << endl;
+     cout << "Elige una opcion: " ;
+     cin >> opcion;
+	 
+
+     switch (opcion)
+		 
+	 {
+	    case 1: suma=fsuma(a,b);
+			cout<< " la suma es : "<<suma;
+			break;
+	    case 2: resta = fresta(a,b);
+			cout<< " la resta es : "<<resta;
+			break;
+	    case 3: producto = fproducto (a,b);
+			cout<< " el producto  es : "<<producto;
+			break;
+	    case 4: division = fdivision (a,b);
+			cout<< " la division es : "<<division;
+			break;
+		case 0: cout << "Salir";
+			break;
+
+	    default: cout << "Opcion invalida" << endl;
+     
+     getch(); 
+	 }
+	 system("cls");
+   }while(opcion!=0);
+}
+ float fsuma (float a, float b)
+ {
+	 float r;
+	 r=a+b;
+	 return r;
+ }
+ float fresta (float a, float b)
+ {
+	 float r;
+	 r=a-b;
+	 return r;
+ }
+ float fproducto (float a, float b)
+ {
+	 float r;
+	 r=a*b;
+	 return r;
+ }
+ float fdivision (float a, float b)
+ {
+	 float r;
+	 r=a/b;
+	 return r;
+ }
+  
